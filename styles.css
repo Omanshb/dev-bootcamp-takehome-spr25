@@ -1,3 +1,157 @@
-/* Your Styles Here */
-body{
+body {
+  background-color: #003057;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
+
+.card {
+  position: relative;
+  background-color: #B3A369;
+  max-width: 800px;
+  align-items: center;
+  text-align: center;
+  padding: 50px 50px;
+  margin: 50px 50px;
+  border-radius: 30px;
+}
+
+.card .card-header {
+  border-bottom: 2px dotted #003057;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.card h1 {
+  font-family: 'Ubuntu';
+  font-size: 3rem;
+  margin: 0;
+}
+
+.card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  margin: 20px 0;
+}
+
+.card p {
+  font-family: 'Open Sans';
+  margin: 0;
+}
+
+.card h3 {
+  font-family: 'Ubuntu';
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.icon-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.icon {
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+  padding: 10px;
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkedin {
+  background-color: #0A66C2;
+}
+
+.gmail {
+  background-color: #D44638;
+}
+
+.github {
+  background-color: #333;
+}
+
+.icon:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+  transition: transform 0.3s;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after,
+.card::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), transparent, #B3A369, #f2f2f2, transparent, #B3A369, #f2f2f2, transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 30px;
+  padding: 7px;
+  animation: 9s spin linear infinite;
+  filter: blur(0.2rem);
+}
+
+.card::before {
+  filter: blur(2rem);
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('./Open_Sans,Ubuntu/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('./Open_Sans,Ubuntu/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('./Open_Sans,Ubuntu/Ubuntu/Ubuntu-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./Open_Sans,Ubuntu/Open_Sans/static/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Write description, make everything a little bit smaller, add a button to my linkedin, github, GT. All of them should have hover/click animations.*/
+/* See if you can make there are light and dark mode. */
+/* Publish it on github pages. */
